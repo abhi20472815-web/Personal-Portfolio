@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Creative Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">PORTFOLIO</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle"></button></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Hi I'm
+                <span>Abhishek</span>
+            </h1>
+            <p class="hero-subtitle">
+                Crafting digital experiences that blend aesthetic beauty with powerful functionality. 
+                Turning ideas into interactive realities.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary"><span>View My Work</span></a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">ABOUT ME</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    I'm a passionate developer with a keen eye for design and a love for creating 
+                    seamless user experiences. With years of experience in web development, I've 
+                    honed my skills in both frontend and backend technologies.
+                </p>
+                <p>
+                    My approach combines technical expertise with creative problem-solving, ensuring 
+                    that every project not only works flawlessly but also delights users. I believe 
+                    in writing clean, maintainable code and staying current with the latest industry trends.
+                </p>
+                <p>
+                    When I'm not coding, you'll find me exploring new design systems, contributing to 
+                    open-source projects, or sharing knowledge with the developer community.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="img/Screenshot 2026-01-13 125721.png" alt="Profile">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">SKILLS & EXPERTISE</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Frontend Development</h3>
+                <p>Building responsive and interactive user interfaces with modern frameworks and libraries.</p>
+                <div class="skill-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                      <span class="tag">Bootstrap</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">React</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Backend Development</h3>
+                <p>Creating robust server-side applications and RESTful APIs with scalable architecture.</p>
+                <div class="skill-tags">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Python</span>
+               
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Design & Tools</h3>
+                <p>Leveraging industry-standard tools for design, version control, and deployment.</p>
+                <div class="skill-tags">
+                  
+                    <span class="tag">Git</span>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">FEATURED PROJECTS</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-info">
+                    <h3>APNA BAZZAR (E-Commerce Platform)</h3>
+                    <p>
+                        A full-stack e-commerce solution with real-time inventory management, 
+                        payment integration, and an intuitive admin dashboard. Built with HTML, CSS, JavaScript, MySQL, PHP.
+                        
+                    </p>
+                    <div class="project-links">
+                        <a href="https://apnabazzar.free.nf/" class="project-link">View Live</a>
+                        <a href="https://github.com/abhi20472815-web/E-commerce-Apna-Bazzar-.git" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-info">
+                    <h3>Exam Portal (Online Education System) </h3>
+                    <p>
+                         Built a comprehensive online exam platform featuring secure login 
+                        authentication, dynamic exam interface, automated results generation, and 
+                        admin control panel.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://exam-portal.free.nf/" class="project-link">View Live</a>
+                        <a href="https://github.com/abhi20472815-web/examportal.git" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-info">
+                    <h3>SpiceRoute (Table Reservation System)</h3>
+                    <p>
+                        Designed a digital table booking system with separate admin and customer 
+                        modules for efficient restaurant management 
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Live</a>
+                        <a href="#" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">GET IN TOUCH</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Work Together</h3>
+                <p>
+                    I'm always interested in hearing about new projects and opportunities. 
+                    Whether you have a question or just want to say hi, feel free to reach out!
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:abhi20472815@example.com" class="contact-method">
+                        <span>📧</span>
+                        <span>abhi271815@gmail.com</span>
+                    </a>
+                    <a href="tel:+1234567890" class="contact-method">
+                        <span>📱</span>
+                        <span>+91 7814258054</span>
+                    </a>
+                    <a href="#" class="contact-method">
+                        <span>📍</span>
+                        <span>Jalandhar City, INDIA</span>
+                    </a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary"><span>Send Message</span></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="GitHub">💻</a>
+                <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                <a href="#" class="social-link" aria-label="Dribbble">🎯</a>
+            </div>
+            <p>&copy; 2026 ABHISHEK. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
