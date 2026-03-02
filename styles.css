@@ -308,7 +308,7 @@ section {
     position: absolute;
     top: -20px;
     left: -20px;
-    width: 100%;
+    width: 80%;
     height: 100%;
     border: 3px solid var(--accent);
     z-index: -1;
