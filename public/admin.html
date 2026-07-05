@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Messages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="login-card">
+            <h2 class="login-title">ADMIN LOGIN</h2>
+            <p class="login-subtitle">Enter your admin password to view messages</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary"><span>Unlock Dashboard</span></button>
+                <div id="loginError" class="error-text"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboardContent" class="dashboard-container" style="display: none;">
+        <!-- Header -->
+        <header class="admin-header">
+            <nav class="admin-nav">
+                <div class="logo">PORTFOLIO <span class="badge">ADMIN</span></div>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle"></button>
+                    <button class="btn btn-secondary logout-btn" id="logoutBtn">Lock</button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="admin-main">
+            <div class="main-header animate-up">
+                <h1 class="admin-title">CONTACT MESSAGES</h1>
+                <p class="admin-subtitle">View and manage messages received from your portfolio contact form.</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid animate-up" style="animation-delay: 0.1s;">
+                <div class="stat-card">
+                    <div class="stat-icon">📥</div>
+                    <div class="stat-info">
+                        <h3>Total Messages</h3>
+                        <p id="statTotal" class="stat-number">0</p>
+                    </div>
+                </div>
+                <div class="stat-card unread">
+                    <div class="stat-icon">🔔</div>
+                    <div class="stat-info">
+                        <h3>Unread</h3>
+                        <p id="statUnread" class="stat-number">0</p>
+                    </div>
+                </div>
+                <div class="stat-card read">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <h3>Read</h3>
+                        <p id="statRead" class="stat-number">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls (Search & Filter) -->
+            <div class="controls-bar animate-up" style="animation-delay: 0.2s;">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Search by name, email, or message...">
+                </div>
+                <div class="filter-box">
+                    <label for="statusFilter">Filter:</label>
+                    <select id="statusFilter">
+                        <option value="all">All Messages</option>
+                        <option value="unread">Unread Only</option>
+                        <option value="read">Read Only</option>
+                    </select>
+                </div>
+                <button class="btn btn-secondary" id="refreshBtn"><span>🔄 Refresh</span></button>
+            </div>
+
+            <!-- Message List Container -->
+            <div class="messages-container animate-up" style="animation-delay: 0.3s;">
+                <div id="noMessages" class="no-messages-card" style="display: none;">
+                    <div class="no-messages-icon">✉️</div>
+                    <h3>No messages found</h3>
+                    <p>When visitors contact you, their messages will appear here.</p>
+                </div>
+                
+                <div class="table-wrapper">
+                    <table class="messages-table" id="messagesTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 180px;">Date & Time</th>
+                                <th style="width: 180px;">Sender</th>
+                                <th>Message</th>
+                                <th style="width: 160px; text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="messagesTableBody">
+                            <!-- Populated dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

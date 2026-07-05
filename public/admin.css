@@ -1,0 +1,445 @@
+/* Admin Dashboard Stylesheet */
+
+/* Modal Lock Screen */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.login-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 50px var(--shadow);
+    text-align: center;
+    animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.login-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.login-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.error-text {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* Dashboard Container & Navigation */
+.dashboard-container {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-header {
+    border-bottom: 2px solid var(--border);
+    background: var(--bg-secondary);
+}
+
+.admin-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.badge {
+    background: var(--accent);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: 5px;
+    letter-spacing: 0.5px;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logout-btn {
+    padding: 0.5rem 1.2rem !important;
+    font-size: 0.85rem !important;
+    height: auto !important;
+}
+
+/* Main Layout */
+.admin-main {
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 5%;
+    width: 100%;
+}
+
+.admin-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.admin-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+/* Stats Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px var(--shadow);
+}
+
+.stat-icon {
+    font-size: 2.2rem;
+    background: var(--bg-primary);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+}
+
+.stat-info h3 {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.2rem;
+}
+
+.stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.stat-card.unread {
+    border-left: 4px solid var(--accent);
+}
+.stat-card.read {
+    border-left: 4px solid #2ecc71;
+}
+
+/* Controls Bar */
+.controls-bar {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    padding: 1.2rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 280px;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 2px solid var(--border);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.filter-box {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.filter-box label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.filter-box select {
+    padding: 0.8rem 2rem 0.8rem 1rem;
+    border: 2px solid var(--border);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.filter-box select:focus {
+    border-color: var(--accent);
+}
+
+/* Messages Table */
+.messages-container {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.messages-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.messages-table th {
+    background: var(--bg-secondary);
+    padding: 1.2rem 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.messages-table td {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    font-size: 0.9rem;
+}
+
+.messages-table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.messages-table tbody tr:hover {
+    background-color: var(--bg-secondary);
+}
+
+/* Message Read/Unread styling */
+.messages-table tbody tr.unread-row {
+    font-weight: 600;
+    background-color: rgba(255, 107, 53, 0.03);
+}
+
+.messages-table tbody tr.unread-row td {
+    color: var(--text-primary);
+}
+
+.messages-table tbody tr.read-row td {
+    color: var(--text-secondary);
+}
+
+/* Message Meta block */
+.sender-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.sender-name {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.sender-email {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sender-email:hover {
+    color: var(--accent);
+}
+
+.message-date {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Message content display */
+.message-text-cell {
+    line-height: 1.6;
+}
+
+.message-snippet {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.action-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    background: var(--bg-primary);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}
+
+.action-btn.read-toggle-btn:hover {
+    border-color: #2ecc71;
+    color: #2ecc71;
+    background: rgba(46, 204, 113, 0.05);
+}
+
+.action-btn.delete-btn:hover {
+    border-color: #e74c3c;
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.05);
+}
+
+/* Empty State Card */
+.no-messages-card {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.no-messages-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
+}
+
+.no-messages-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.no-messages-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Animation classes */
+.animate-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Responsive Table overrides */
+@media (max-width: 768px) {
+    .messages-table, .messages-table thead, .messages-table tbody, .messages-table th, .messages-table td, .messages-table tr {
+        display: block;
+    }
+    
+    .messages-table thead {
+        display: none; /* Hide header on mobile */
+    }
+    
+    .messages-table tbody tr {
+        border: 2px solid var(--border);
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: var(--card-bg);
+    }
+    
+    .messages-table td {
+        border-bottom: none;
+        padding: 0.5rem 0;
+        width: 100% !important;
+    }
+    
+    .messages-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        display: block;
+        margin-bottom: 0.2rem;
+    }
+    
+    .action-buttons {
+        justify-content: flex-start;
+        margin-top: 0.5rem;
+    }
+}
