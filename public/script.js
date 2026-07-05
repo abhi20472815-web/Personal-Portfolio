@@ -100,35 +100,31 @@
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
                 const originalBtnText = submitBtn.innerHTML;
                 
-                // Get form inputs
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-
                 // Show loading state
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<span>Sending...</span>';
 
                 try {
-                    const response = await fetch('/api/contact', {
+                    // We serialize the form data for Netlify Forms (x-www-form-urlencoded)
+                    const formData = new FormData(contactForm);
+                    
+                    const response = await fetch('/', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/x-www-form-urlencoded'
                         },
-                        body: JSON.stringify({ name, email, message })
+                        body: new URLSearchParams(formData).toString()
                     });
 
-                    const data = await response.json();
-
-                    if (response.ok && data.success) {
-                        showToast('Message Sent', data.message || 'Thank you! Your message was sent successfully.', 'success');
+                    if (response.ok) {
+                        showToast('Message Sent', 'Thank you! Your message was sent successfully.', 'success');
                         contactForm.reset();
                     } else {
-                        throw new Error(data.message || 'Something went wrong. Please try again.');
+                        throw new Error('Netlify form submission failed.');
                     }
                 } catch (error) {
                     console.error('Submission error:', error);
-                    showToast('Submission Failed', error.message || 'Unable to send message. Please try again later.', 'error');
+                    showToast('Submission Failed', 'Unable to send message. Please try again.', 'error');
                 } finally {
                     // Reset button state
                     submitBtn.disabled = false;
